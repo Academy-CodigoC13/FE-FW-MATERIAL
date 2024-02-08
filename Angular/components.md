@@ -185,4 +185,4 @@ You should see the following in your browser:
 2. inpect the page with the browser's developer tools, try to identify the
    component's template, styles and the component itself.
 
-*congratulations, you've set up your first Angular application! From here, you*
+_congratulations, you've set up your first Angular application! From here, you_
