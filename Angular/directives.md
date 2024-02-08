@@ -93,7 +93,7 @@ import { RouterOutlet } from "@angular/router";
 import { BrowserModule } from "@angular/platform-browser";
 
 @NgModule({
-  declarations: [AppComponent, EjemploComponent, ResaltarDirective],
+  declarations: [AppComponent, EjemploComponent, ResaltarDirective], // here
   imports: [CommonModule, RouterOutlet, BrowserModule],
 
   providers: [],
