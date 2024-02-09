@@ -38,7 +38,7 @@ In your terminal navigate to the directory where you want to create your new
 project, and run the following command:
 
 ```bash
-ng new my-angular-app
+ng new my-angular-app --standalone false
 ```
 
 You should see a series of prompts asking you to choose various options for your
@@ -88,7 +88,6 @@ import { Component } from "@angular/core";
 
 @Component({
   selector: "app-ejemplo", // Selector del componente
-  standalone: true, // Indica si el componente es independiente o no
   templateUrl: "./ejemplo.component.html", // Plantilla HTML del componente
   styleUrls: ["./ejemplo.component.css"], // Estilos CSS del componente
 })
@@ -156,8 +155,6 @@ Open the `app.component.html` file and insert the following code:
 ```typescript
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, EjemploComponent], // Here
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

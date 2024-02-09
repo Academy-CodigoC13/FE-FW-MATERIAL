@@ -55,9 +55,9 @@ code:
 import { Directive, ElementRef, HostListener } from "@angular/core";
 
 @Directive({
-  selector: "[appResaltar]", // Selector de la directiva
+  selector: "[appMyDirective]", // Selector de la directiva
 })
-export class ResaltarDirective {
+export class MyDirectiveDirective {
   constructor(private elementRef: ElementRef) {}
 
   // Escucha el evento mouseenter y aplica estilos al elemento
@@ -88,13 +88,13 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { AppComponent } from "./app.component";
 import { EjemploComponent } from "./components/ejemplo/ejemplo.component";
-import { ResaltarDirective } from "./directives/my-directive.directive";
+import { MyDirectiveDirective } from "./directives/my-directive.directive";
 import { RouterOutlet } from "@angular/router";
 import { BrowserModule } from "@angular/platform-browser";
 
 @NgModule({
-  declarations: [AppComponent, EjemploComponent, ResaltarDirective], // here
-  imports: [CommonModule, RouterOutlet, BrowserModule],
+  declarations: [AppComponent, EjemploComponent, MyDirectiveDirective], // here
+  imports: [BrowserModule, CommonModule],
 
   providers: [],
   bootstrap: [AppComponent],
@@ -109,15 +109,15 @@ code:
 
 ```html
 <!-- Aquí se aplica la directiva -->
-<div appResaltar>
+<div appMyDirective>
   <h1>{{ titulo }}</h1>
   <p>Contador: {{ contador }}</p>
   <button (click)="incrementarContador()">Incrementar</button>
 </div>
 ```
 
-Add the `appResaltar` directive to the `div` element. This directive will apply
-a yellow background to the element when the mouse enters and remove the
+Add the `appMyDirective` directive to the `div` element. This directive will
+apply a yellow background to the element when the mouse enters and remove the
 background when the mouse leaves.
 
 ## Step 5: run the project
