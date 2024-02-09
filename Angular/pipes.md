@@ -54,9 +54,9 @@ Open the file `pipes/my-pipe.pipe.ts` and insert the following code:
 import { Pipe, PipeTransform } from "@angular/core";
 
 @Pipe({
-  name: "mayusculas", // Nombre del pipe
+  name: "myPipe", // Nombre del pipe
 })
-export class MayusculasPipe implements PipeTransform {
+export class MyPipePipe implements PipeTransform {
   transform(valor: string): string {
     return valor.toUpperCase(); // Transformación: convierte el texto a mayúsculas
   }
@@ -75,14 +75,14 @@ import { EjemploComponent } from "./components/ejemplo/ejemplo.component";
 import { ResaltarDirective } from "./directives/my-directive.directive";
 import { RouterOutlet } from "@angular/router";
 import { BrowserModule } from "@angular/platform-browser";
-import { MayusculasPipe } from "./pipes/my-pipe.pipe";
+import { myPipe } from "./pipes/my-pipe.pipe";
 
 @NgModule({
   declarations: [
     AppComponent,
     EjemploComponent,
     ResaltarDirective,
-    MayusculasPipe, // here
+    myPipe, // here
   ],
   imports: [CommonModule, RouterOutlet, BrowserModule],
 
@@ -99,12 +99,12 @@ with the following code:
 
 ```html
 <!-- Aquí se aplica el pipe -->
-<h1>{{ titulo | mayusculas }}</h1>
+<h1>{{ titulo | myPipe }}</h1>
 <p>Contador: {{ contador | number }}</p>
 <button (click)="incrementarContador()">Incrementar</button>
 ```
 
-Add the `mayusculas` pipe to the `h1` element. This pipe will transform the text
+Add the `myPipe` pipe to the `h1` element. This pipe will transform the text
 to uppercase.
 
 ## Step 5: run the project
