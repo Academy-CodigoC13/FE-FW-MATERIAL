@@ -295,6 +295,90 @@ export const useScrollPosition = () => {
 };
 ```
 
-El codigo anterior se explica [acá](code_explanation.md) 
+El codigo anterior se explica [acá](code_explanation.md)
 
-## Conclusiones
+Este hook será importado en el componente `Header` generar el efecto sticky en
+el header, es decir que el usuario nunca perderá de vista el header a medida que
+se desplaza hacia arriba o abajo por la página.
+
+el hook se debería integrar de la siguiente manera en el componente `Header`:
+
+```tsx
+import { useScrollPosition } from "@/hooks/useScrollPosition";
+
+const Header = () => {
+  const scrollPosition = useScrollPosition();
+
+  return (
+    <header
+      className={`sticky top-0 z-50 transition-shadow ${
+        scrollPosition > 0
+          ? "shadow bg-opacity-70 backdrop-blur-lg backdrop-filter"
+          : "shadow-none"
+      }`}>
+
+      // el resto de tu código
+
+    </header>
+  );
+};
+```
+
+## Otras configuraciones del proyecto:
+
+1. Verifica que en la raíz del proyecto se encuentre un archivo llamado postcss.config.js con el siguiente contenido:
+
+```javascript
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
+```
+
+2. Verifica que en la raíz del proyecto se encuentre un archivo llamado tailwind.config.js con el siguiente contenido:
+
+```javascript
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
+    },
+  },
+  plugins: [],
+};
+export default config;
+```
+
+### Conclusiones
+
+1. Importante explorar a detalle los usos de las clases de Tailwind CSS, ya que
+   estas son la base de la estilización de la aplicación.
+
+2. Te queda como reto personal hacer funcional los links del header y el form del
+   componente `Contact`.
+
+3. Las grandes ventajas de Next.js y Tailwind CSS es que te permiten crear
+   aplicaciones web de forma rápida y sencilla, sin tener que preocuparte por
+   configuraciones complejas.
+    
+    - Por ejemplo, en este tutorial, no tuvimos que preocuparnos por configurar
+      Webpack, Babel, etc. Todo esto ya viene configurado por defecto en Next.js.
+
+    - Además, si notaste los pasos de la sesion `Estructura layout y pages`, no
+      tuvimos que preocuparnos por configurar rutas, ya que Next.js maneja las
+      rutas de forma automática.
+
+    -  Por otro lado los archivos que verificamos en la sesion `Otras configuraciones del proyecto` son archivos de configuración que vienen por defecto en Next.js y Tailwind CSS, por lo que no tuvimos que preocuparnos por configurarlos, solo VERIFICAMOS su existencia.
