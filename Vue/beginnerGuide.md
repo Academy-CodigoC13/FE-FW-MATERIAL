@@ -547,17 +547,26 @@ Observe the colons in the `:src` and `:alt` attributes. They’re the shorthand 
 
 - Import the newly created CSS file inside your ./src/main.js file:
 
-```javascript
-import { createApp } from "vue";
-import App from "./App.vue";
+  ```javascript
+  import { createApp } from "vue";
+  import App from "./App.vue";
 
-// add this
-import "./index.css";
+  // add this
+  import "./index.css";
 
-createApp(App).mount("#app");
-```
+  createApp(App).mount("#app");
+  ```
 
 ## TASK (Jejejeje 😈)
 
 - Add the Tailwind CSS classes to the `App.vue` file. You can use the classes to
-  style the application as you like.
+  style the application as you like. **Be creative and have fun with it**.
+
+### Resources
+
+- You can visit this tutorial for be more confident with Tailwind CSS in Vue.js:
+  [Tailwind CSS Tutorial for Beginners](https://www.youtube.com/watch?v=cnfR4vYJGgY&ab_channel=AndreMadarang)
+
+```
+
+```
