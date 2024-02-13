@@ -566,7 +566,3 @@ Observe the colons in the `:src` and `:alt` attributes. They’re the shorthand 
 
 - You can visit this tutorial for be more confident with Tailwind CSS in Vue.js:
   [Tailwind CSS Tutorial for Beginners](https://www.youtube.com/watch?v=cnfR4vYJGgY&ab_channel=AndreMadarang)
-
-```
-
-```
